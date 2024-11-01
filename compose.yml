@@ -1,0 +1,16 @@
+name: video-handler
+
+services:
+  go-app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - external-storage:/media/uploads
+    tty: true
+    stdin_open: true
+
+volumes:
+  external-storage:
+    external: true
